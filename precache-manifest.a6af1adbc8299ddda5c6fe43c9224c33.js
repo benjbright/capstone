@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "547ec6fb03fd78f804d9",
-    "url": "/capstone/static/css/main.07673466.chunk.css"
+    "revision": "f3b2bfd6fce0091989a2",
+    "url": "/capstone/static/css/main.9867166e.chunk.css"
   },
   {
-    "revision": "547ec6fb03fd78f804d9",
-    "url": "/capstone/static/js/main.547ec6fb.chunk.js"
+    "revision": "f3b2bfd6fce0091989a2",
+    "url": "/capstone/static/js/main.f3b2bfd6.chunk.js"
   },
   {
     "revision": "0d4d29ae84dcacacf9b3",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/capstone/static/js/runtime~main.64b0c223.js"
   },
   {
-    "revision": "71a69e147c14aebdac91fee43231207b",
+    "revision": "903427ee5b57a92a17bddc676b932357",
     "url": "/capstone/index.html"
   }
 ];
