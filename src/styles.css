@@ -22,6 +22,23 @@ main.photos {
   grid-auto-flow: dense;
 }
 
+/* FAVOURITES PAGE */
+
+main.favourites-page {
+  padding: 10px;
+}
+
+.favourites-page > h1 {
+  text-align: center;
+}
+
+.favourites-photos {
+  width: 200px;
+  height: 200px;
+}
+
+/* CART PAGE */
+
 main.cart-page {
   padding: 10px;
 }
@@ -129,6 +146,15 @@ header {
   -webkit-box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
   -moz-box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
   box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav h2 {
+  margin-right: 1em;
 }
 
 a {
