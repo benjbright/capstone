@@ -1,16 +1,10 @@
 import React, { useContext } from "react"
 import { Context } from "../Context"
-import Image from "../components/Image"
 
 const Favourites = () => {
   const { allPhotos } = useContext(Context)
-  console.log(allPhotos)
 
-  const displayFavourites = allPhotos
-    .filter((photo) => photo.isFavorite)
-    .map((photo) => <Image key={photo.id} img={photo} />)
-
-  console.log(displayFavourites)
+  const displayFavourites = allPhotos.filter((photo) => photo.isFavorite)
 
   return (
     <main className="favourites-page">
@@ -18,7 +12,11 @@ const Favourites = () => {
       {displayFavourites.length === 0 && (
         <p>Please select your favourite pictures!</p>
       )}
-      <div className="favourites-photos">{displayFavourites}</div>
+      <div className="favourites-display">
+        {displayFavourites.map((image) => (
+          <img src={image.url} alt="" key={image.id} />
+        ))}
+      </div>
     </main>
   )
 }

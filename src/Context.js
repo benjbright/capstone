@@ -1,11 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React from "react"
+import { useState, useEffect } from "react"
 
-const Context = React.createContext();
+const Context = React.createContext()
 
 function ContextProvider({ children }) {
-  const [allPhotos, setAllPhotos] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
+  const [allPhotos, setAllPhotos] = useState([])
+  const [cartItems, setCartItems] = useState([])
 
   useEffect(() => {
     fetch(
@@ -14,48 +14,41 @@ function ContextProvider({ children }) {
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
-        setAllPhotos(data);
-      });
-  }, []);
+        setAllPhotos(data)
+      })
+  }, [])
 
   function toggleFavourite(id) {
-    // console.log("Clicked!");
-    // console.log(id);
     const newArray = allPhotos.map((img) => {
       if (img.id === id) {
         return {
           ...img,
           isFavorite: !img.isFavorite,
-        };
+        }
       } else {
-        return img;
+        return img
       }
-    });
+    })
 
-    // console.log(newArray);
-    setAllPhotos(newArray);
+    setAllPhotos(newArray)
   }
 
-  // console.log(allPhotos);
-
   function addToCart(newItem) {
-    // console.log("Clicked!");
-    setCartItems((prevItems) => [...prevItems, newItem]);
+    setCartItems((prevItems) => [...prevItems, newItem])
   }
 
   function removeFromCart(img) {
-    console.log("Removed from the cart!");
     const newArray = cartItems.filter((item) => {
-      return item.id !== img.id;
-    });
-    setCartItems(newArray);
+      return item.id !== img.id
+    })
+    setCartItems(newArray)
   }
 
   function emptyCart() {
-    setCartItems([]);
+    setCartItems([])
   }
 
-  console.log(cartItems);
+  // console.log(cartItems)
 
   return (
     <Context.Provider
@@ -70,7 +63,7 @@ function ContextProvider({ children }) {
     >
       {children}
     </Context.Provider>
-  );
+  )
 }
 
-export { ContextProvider, Context };
+export { ContextProvider, Context }
